@@ -97,8 +97,8 @@ class CoordinateCalculatorAlgorithm(QgsProcessingAlgorithm):
         # Add new fields
         with edit(target_layer):
             if calculate_xy and (target_layer.fields().lookupField('X') == -1 or target_layer.fields().lookupField('Y') == -1):
-                target_layer.addAttribute(QgsField('X', QVariant.Double))
-                target_layer.addAttribute(QgsField('Y', QVariant.Double))
+                target_layer.addAttribute(QgsField('X', QVariant.Int))
+                target_layer.addAttribute(QgsField('Y', QVariant.Int))
             if format_dd and (target_layer.fields().lookupField('DD_Lat') == -1 or target_layer.fields().lookupField('DD_Lon') == -1):
                 target_layer.addAttribute(QgsField('DD_Lat', QVariant.Double))
                 target_layer.addAttribute(QgsField('DD_Lon', QVariant.Double))
